@@ -1,0 +1,46 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "db:check": "node server/checkDb.js",
+    "db:migrate": "node db/migrate.js",
+    "db:seed": "node db/seed.js",
+    "test": "node --test src/utils/glucose.test.js server/api.test.js",
+    "test:pg": "REQUIRE_REAL_PG=1 node --test server/postgres.integration.test.js",
+    "clean": "rm -rf dist",
+    "lint": "node -e \"import('node:child_process').then(({ execFileSync }) => { const files = ['server.js','vite.config.js','db/migrate.js','db/seed.js','server/app.js','server/auth.js','server/checkDb.js','server/db.js','server/gemini.js','server/repositories/sweetyRepository.js','server/api.test.js','server/postgres.integration.test.js','src/utils/glucose.js','src/utils/glucose.test.js','src/services/apiClient.js','src/services/readingsService.js']; for (const f of files) execFileSync(process.execPath, ['--check', f], { stdio: 'inherit' }); })\""
+  },
+  "dependencies": {
+    "@google/genai": "^3.2.0",
+    "@neon/config": "^1.14.0",
+    "@neon/env": "^2.1.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "axios": "^1.21.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.7.4",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "pg": "^8.23.1",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "react-router-dom": "^7.18.5",
+    "vite": "^8.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

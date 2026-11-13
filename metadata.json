@@ -1,0 +1,6 @@
+{
+  "name": "Sweety – Blood Glucose Tracker",
+  "description": "Clinical-grade blood glucose tracking, daily slot logging, monthly reporting, and AI-guided wellness insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
