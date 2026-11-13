@@ -144,9 +144,9 @@ export function DashboardPage({
             {progressCount}/{MAX_READINGS_PER_DAY} readings
           </span>
         </div>
-        <div className="w-full h-2.5 rounded-full bg-emerald-50 overflow-hidden">
+        <div className="w-full h-2.5 rounded-full bg-emerald-50 overflow-hidden" role="progressbar" aria-label="Daily reading completion" aria-valuemin={0} aria-valuemax={MAX_READINGS_PER_DAY} aria-valuenow={progressCount}>
           <div
-            className="h-full rounded-full bg-emerald-600 transition-all duration-300"
+            className="h-full rounded-full bg-emerald-600 transition-all duration-500 ease-out"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -154,7 +154,7 @@ export function DashboardPage({
 
       {/* 4-Column KPI Summary Strip */}
       <section aria-label="Selected day summary" className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
+        <div className="group bg-white rounded-2xl border border-emerald-100/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
           <p className="text-xs font-medium text-slate-500">Highest</p>
           <p className="mt-2 text-2xl font-bold font-mono tabular-nums text-slate-900">
             {loading ? '—' : dailyReport.summary.highest !== null ? `${dailyReport.summary.highest}` : '—'}
@@ -164,7 +164,7 @@ export function DashboardPage({
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
+        <div className="group bg-white rounded-2xl border border-emerald-100/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
           <p className="text-xs font-medium text-slate-500">Lowest</p>
           <p className="mt-2 text-2xl font-bold font-mono tabular-nums text-slate-900">
             {loading ? '—' : dailyReport.summary.lowest !== null ? `${dailyReport.summary.lowest}` : '—'}
@@ -174,7 +174,7 @@ export function DashboardPage({
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
+        <div className="group bg-white rounded-2xl border border-emerald-100/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
           <p className="text-xs font-medium text-slate-500">Average</p>
           <p className="mt-2 text-2xl font-bold font-mono tabular-nums text-emerald-800">
             {loading ? '—' : dailyReport.summary.averageFormatted}
@@ -184,7 +184,7 @@ export function DashboardPage({
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
+        <div className="group bg-white rounded-2xl border border-emerald-100/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md">
           <p className="text-xs font-medium text-slate-500">Total recorded</p>
           <p className="mt-2 text-2xl font-bold font-mono tabular-nums text-slate-900">
             {loading ? '—' : readings.length}
@@ -237,7 +237,7 @@ export function DashboardPage({
             return (
               <div
                 key={slot.id}
-                className="bg-white rounded-2xl border border-emerald-100 p-5 flex flex-col justify-between min-h-[156px]"
+                className="bg-white rounded-2xl border border-emerald-100/80 p-5 shadow-sm flex flex-col justify-between min-h-[156px] transition-all duration-200 hover:-translate-y-0.5 hover:border-emerald-200 hover:shadow-md"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
