@@ -37,3 +37,152 @@
     }
   }
 }
+/* -----------------------------------------
+   Sweety theme polish: dark mode
+------------------------------------------ */
+
+html.dark,
+html.dark body {
+  background-color: #0b1220;
+  color: #e2e8f0;
+}
+
+html.dark .min-h-screen {
+  background-color: #0b1220;
+}
+
+html.dark .bg-white {
+  background-color: #111d2b;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0f1724;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+
+html.dark .bg-emerald-50,
+html.dark .bg-emerald-50\/70 {
+  background-color: #123329;
+}
+
+html.dark .bg-emerald-100 {
+  background-color: #174536;
+}
+
+html.dark .text-slate-900 {
+  color: #e8eef6;
+}
+
+html.dark .text-slate-700 {
+  color: #cbd5e1;
+}
+
+html.dark .text-slate-600 {
+  color: #b6c4d2;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8;
+}
+
+html.dark .text-slate-400 {
+  color: #8494a8;
+}
+
+html.dark .text-emerald-900 {
+  color: #a7f3d0;
+}
+
+html.dark .text-emerald-800 {
+  color: #6ee7b7;
+}
+
+html.dark .text-emerald-700 {
+  color: #34d399;
+}
+
+html.dark .border-emerald-100,
+html.dark .border-emerald-100\/80,
+html.dark .border-emerald-100\/90 {
+  border-color: #254638;
+}
+
+html.dark .border-slate-100 {
+  border-color: #263447;
+}
+
+html.dark .border-slate-200 {
+  border-color: #334155;
+}
+
+html.dark .hover\:bg-slate-50:hover {
+  background-color: #1e293b;
+}
+
+html.dark .hover\:bg-slate-100:hover {
+  background-color: #273449;
+}
+
+html.dark .hover\:bg-emerald-50:hover {
+  background-color: #174536;
+}
+
+html.dark .hover\:bg-emerald-100:hover {
+  background-color: #205640;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #111d2b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #8494a8;
+}
+
+html.dark .bg-rose-50 {
+  background-color: #351d29;
+}
+
+html.dark .border-rose-200 {
+  border-color: #713044;
+}
+
+html.dark .text-rose-800,
+html.dark .text-rose-700 {
+  color: #fda4af;
+}
+
+html.dark .shadow-sm,
+html.dark .shadow-md {
+  --tw-shadow-color: rgb(0 0 0 / 25%);
+}
+
+html.dark .divide-slate-100 > :not(:last-child) {
+  border-color: #263447;
+}
+
+/* Smooth visual transitions between themes */
+body,
+body * {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+/* Keep motion accessible */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -9,6 +9,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
+import { ThemeToggle } from '../components/ThemeToggle.jsx';
 
 export function LoginPage() {
   const { login, register, authError, clearAuthError } = useAuth();
@@ -70,6 +71,9 @@ export function LoginPage() {
 
   return (
     <div className="min-h-screen bg-[#f6faf8] flex flex-col justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="fixed right-4 top-4 z-20">
+        <ThemeToggle />
+      </div>
       <div className="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left Brand & Clinical Overview */}
         <div className="lg:col-span-7 bg-white rounded-3xl border border-emerald-100 p-8 sm:p-10 flex flex-col justify-between">

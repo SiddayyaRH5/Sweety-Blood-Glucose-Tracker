@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import { ReadingsProvider, useReadings } from './context/ReadingsContext.jsx';
@@ -127,10 +128,12 @@ function AppRouter() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <AppRouter />
-      </AuthProvider>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }

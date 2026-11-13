@@ -11,6 +11,7 @@ import {
   X,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
+import { ThemeToggle } from './ThemeToggle.jsx';
 
 const NAV_ITEMS = [
   { to: '/', label: 'Dashboard', icon: Activity },
@@ -48,6 +49,8 @@ export function Layout({ children, onOpenNewReading }) {
           </span>
         </div>
 
+        <ThemeToggle />
+
         <button
           type="button"
           onClick={onOpenNewReading}
@@ -81,7 +84,11 @@ export function Layout({ children, onOpenNewReading }) {
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              <nav aria-label="Main navigation" className="space-y-1">
+              <div className="mb-4">
+            <ThemeToggle />
+          </div>
+
+          <nav aria-label="Main navigation" className="space-y-1">
                 {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
                   <NavLink
                     key={to}
@@ -150,6 +157,10 @@ export function Layout({ children, onOpenNewReading }) {
             <Plus className="w-4 h-4" />
             <span>Log Reading</span>
           </button>
+
+          <div className="mb-4">
+            <ThemeToggle />
+          </div>
 
           <nav aria-label="Main navigation" className="space-y-1">
             {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
